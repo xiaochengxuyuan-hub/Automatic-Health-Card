@@ -1,9 +1,4 @@
-*.json
-*.chls
-*.pyc
-setting.py
-setting.py
-__pycache__/
-.DS_Store
-.vscode/
-.idea/
+.vscode
+__pycache__
+.idea
+.gitignore
