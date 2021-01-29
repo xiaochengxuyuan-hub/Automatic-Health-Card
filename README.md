@@ -16,7 +16,7 @@
 
 ### 验证你的身份（手动法）
 
-在浏览器打开 https://work.jluzh.com/default/work/jlzh/jkxxtb/jkxxcj.jsp 并登陆
+在浏览器打开 https://work.jluzh.com/default/work/shgcd/jkxxcj/jkxxcj.jsp 并登陆
 
 登陆成功后打开浏览器的开发者工具，在如下图所示的位置找到 `JSESSIONID`，并复制到 `setting.py` 里面对应的位置
 

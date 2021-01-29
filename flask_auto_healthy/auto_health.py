@@ -22,7 +22,7 @@ def query_record(number, headers, only_today=True):
     else:
         querySqlId = "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryNear"
 
-    url = "https://work.jluzh.com/default/work/jlzh/jkxxtb/com.sudytech.portalone.base.db.queryBySqlWithoutPagecond.biz.ext"
+    url = "https://work.jluzh.com/default/work/shgcd/jkxxcj/com.sudytech.portalone.base.db.queryBySqlWithoutPagecond.biz.ext"
     payloads = '{"params":{"empcode":"' + \
         str(number)+'"},"querySqlId":"'+querySqlId+'"}'
     r = requests.post(url, headers=headers, data=payloads)
@@ -44,7 +44,7 @@ def query_record(number, headers, only_today=True):
 
 
 def submit(payloads, headers):
-    url = "https://work.jluzh.com/default/work/jlzh/jkxxtb/com.sudytech.portalone.base.db.saveOrUpdate.biz.ext"
+    url = "https://work.jluzh.com/default/work/shgcd/jkxxcj/com.sudytech.portalone.base.db.saveOrUpdate.biz.ext"
     r = requests.post(url, headers=headers, data=payloads.encode("utf-8"))
     if r.json()["result"] == "1":
         return True
@@ -144,7 +144,7 @@ def main(username,password,number):
         "sec-fetch-site": "same-origin",
         "sec-fetch-mode": "cors",
         "sec-fetch-dest": "empty",
-        "referer": "https://work.jluzh.com/default/work/jlzh/jkxxtb/jkxxcj.jsp",
+        "referer": "https://work.jluzh.com/default/work/shgcd/jkxxcj/jkxxcj.jsp",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
         "content-length": "896",
@@ -167,7 +167,7 @@ def mains(username,password,start,end):
         "sec-fetch-site": "same-origin",
         "sec-fetch-mode": "cors",
         "sec-fetch-dest": "empty",
-        "referer": "https://work.jluzh.com/default/work/jlzh/jkxxtb/jkxxcj.jsp",
+        "referer": "https://work.jluzh.com/default/work/shgcd/jkxxcj/jkxxcj.jsp",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
         "content-length": "896",
