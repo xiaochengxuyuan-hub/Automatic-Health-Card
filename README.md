@@ -18,4 +18,4 @@ pip install lxml
 
 1. star and fork this repo.
 2. set your own those 2 Actions secrets: NUM, PWD
-3. commit anything or wait actions auto run. 
+3. commit anything or wait actions auto run.
