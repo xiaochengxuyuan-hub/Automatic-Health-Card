@@ -96,6 +96,34 @@ def complete(number, headers):
             "bz": last_card["BZ"],
             "_ext": "{}",
             "__type": "sdo:com.sudytech.work.shgcd.jkxxcj.jkxxcj.TJlzhJkxxtb"
+
+
+# 以下为 SUES 请求范例
+# "bz": "无",
+# "gh": "03**学号**03",
+# "gj": "",
+# "id": 262751,
+# "jkqk": "1",
+# "jkzk": "1",
+# "jtdzinput": "地址",
+# "jtgj": "",
+# "lxdh": "15**手机号*2",
+# "nl": "22",
+# "qu": "蒙城县",
+# "rysf": "2",
+# "sd": "上午",
+# "sfzh": "34**身份证**11",
+# "sheng": "安徽省",
+# "shi": "亳州市",
+# "sqbmid": "1*id*9",
+# "sqbmmc": "电子电气工程学院",
+# "sqrid": "84**id*1",
+# "sqrmc": "姓名",
+# "tjsj": "2021-01-29 10:27",
+# "tw": "36.1",
+# "xb": "1",
+# "xrywz": "6",
+# "_ext": "{}"
         }
     }
     if not submit(json.dumps(health_card_data, ensure_ascii=False), headers):
