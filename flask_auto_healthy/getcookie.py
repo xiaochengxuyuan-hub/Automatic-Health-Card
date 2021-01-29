@@ -60,9 +60,9 @@ def get_cookie(username,password):
 
 # def query(is_today=True):
 #     if is_today:
-#         querySqlId = "com.sudytech.work.jlzh.jkxxtb.jkxxcj.queryToday"
+#         querySqlId = "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryToday"
 #     else:
-#         querySqlId = "com.sudytech.work.jlzh.jkxxtb.jkxxcj.queryNear"
+#         querySqlId = "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryNear"
 
 #     inquire_data = {
 #         "params": {

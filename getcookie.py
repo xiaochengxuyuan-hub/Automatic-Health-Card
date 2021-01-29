@@ -28,7 +28,7 @@ def getWeb():
     # options.add_argument('-headless')  # 无头参数
     # options.headless = True
     web = webdriver.Chrome(options=options)
-    url = "https://work.jluzh.edu.cn/default/work/jlzh/jkxxtb/jkxxcj.jsp"
+    url = "https://workflow.sues.edu.cn/default/work/jlzh/jkxxtb/jkxxcj.jsp"
     web.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
         "source": """
         Object.defineProperty(navigator, 'webdriver', {

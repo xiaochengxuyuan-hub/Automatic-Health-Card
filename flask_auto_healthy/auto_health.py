@@ -18,9 +18,9 @@ def query_record(number, headers, only_today=True):
     # is_today = False   # 是否只查询当天
 
     if only_today:
-        querySqlId = "com.sudytech.work.jlzh.jkxxtb.jkxxcj.queryToday"
+        querySqlId = "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryToday"
     else:
-        querySqlId = "com.sudytech.work.jlzh.jkxxtb.jkxxcj.queryNear"
+        querySqlId = "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryNear"
 
     url = "https://work.jluzh.com/default/work/jlzh/jkxxtb/com.sudytech.portalone.base.db.queryBySqlWithoutPagecond.biz.ext"
     payloads = '{"params":{"empcode":"' + \
@@ -95,7 +95,7 @@ def complete(number, headers):
             ],
             "bz": last_card["BZ"],
             "_ext": "{}",
-            "__type": "sdo:com.sudytech.work.jlzh.jkxxtb.jkxxcj.TJlzhJkxxtb"
+            "__type": "sdo:com.sudytech.work.shgcd.jkxxcj.jkxxcj.TJlzhJkxxtb"
         }
     }
     if not submit(json.dumps(health_card_data, ensure_ascii=False), headers):

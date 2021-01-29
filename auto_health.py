@@ -8,11 +8,11 @@ headers = {
     "x-requested-with": "XMLHttpRequest",
     "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) ,Chrome/84.0.4147.105 Safari/537.36",
     "content-type": "text/json",
-    "origin": "https://work.jluzh.edu.cn",
+    "origin": "https://workflow.sues.edu.cn",
     "sec-fetch-site": "same-origin",
     "sec-fetch-mode": "cors",
     "sec-fetch-dest": "empty",
-    "referer": "https://work.jluzh.edu.cn/default/work/jlzh/jkxxtb/jkxxcj.jsp",
+    "referer": "https://workflow.sues.edu.cn/default/work/jlzh/jkxxtb/jkxxcj.jsp",
     "accept-encoding": "gzip, deflate, br",
     "accept-language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
     "content-length": "896",
@@ -25,11 +25,11 @@ def query_record(number, headers, only_today=True):
     # is_today = False   # 是否只查询当天
 
     if only_today:
-        querySqlId = "com.sudytech.work.jlzh.jkxxtb.jkxxcj.queryToday"
+        querySqlId = "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryToday"
     else:
-        querySqlId = "com.sudytech.work.jlzh.jkxxtb.jkxxcj.queryNear"
+        querySqlId = "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryNear"
 
-    url = "https://work.jluzh.edu.cn/default/work/jlzh/jkxxtb/com.sudytech.portalone.base.db.queryBySqlWithoutPagecond.biz.ext"
+    url = "https://workflow.sues.edu.cn/default/work/jlzh/jkxxtb/com.sudytech.portalone.base.db.queryBySqlWithoutPagecond.biz.ext"
     payloads = '{"params":{"empcode":"' + \
         str(number)+'"},"querySqlId":"'+querySqlId+'"}'
     r = requests.post(url, headers=headers, data=payloads)
@@ -50,7 +50,7 @@ def query_record(number, headers, only_today=True):
 
 
 def submit(payloads):
-    url = "https://work.jluzh.edu.cn/default/work/jlzh/jkxxtb/com.sudytech.portalone.base.db.saveOrUpdate.biz.ext"
+    url = "https://workflow.sues.edu.cn/default/work/jlzh/jkxxtb/com.sudytech.portalone.base.db.saveOrUpdate.biz.ext"
     r = requests.post(url, headers=headers, data=payloads.encode("utf-8"))
     if r.json()["result"] == "1":
         return True
@@ -101,7 +101,7 @@ def complete(number):
             ],
             "bz": last_card["BZ"],
             "_ext": "{}",
-            "__type": "sdo:com.sudytech.work.jlzh.jkxxtb.jkxxcj.TJlzhJkxxtb"
+            "__type": "sdo:com.sudytech.work.shgcd.jkxxcj.jkxxcj.TJlzhJkxxtb"
         }
     }
     if not submit(json.dumps(health_card_data, ensure_ascii=False)):
