@@ -85,6 +85,11 @@ def doReport(person):
         timeType = "下午"
     date = time.strftime("%Y-%m-%d")
     now = time.strftime("%Y-%m-%d %H:%M")
+
+    # 在这里你可以填写过去或者未来的日期(
+    # timeType = "下午"
+    # date = "2021-01-28 15:00"
+
     requestJsonFirst = {
         "params": {
             "empcode": username
