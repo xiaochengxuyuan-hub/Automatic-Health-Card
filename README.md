@@ -1,8 +1,10 @@
 # HealthInfoAutoReport
 
-## two ways
+## Two ways
 
-### python 3.6+
+**Remind: First, u need post u tmp least 1 time.**
+
+### Local: Python 3.6+
 
 ```python
 python actions.py account pwd
@@ -14,7 +16,7 @@ pip install beautifulsoup4
 pip install lxml
 ```
 
-### Github Actions
+### Remote: Github Actions
 
 1. star and fork this repo.
 2. set your own those 2 Actions secrets: NUM, PWD
