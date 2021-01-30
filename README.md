@@ -18,12 +18,6 @@ pip install beautifulsoup4
 pip install lxml
 ```
 
-Then change `actions.py` 82 line to this:
-
-```python
-if int(time.strftime("%H")) < 12:
-```
-
 Run this:
 
 ```powershell

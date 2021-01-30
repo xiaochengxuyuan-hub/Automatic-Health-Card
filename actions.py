@@ -1,6 +1,7 @@
 import math, time
 import random
 import requests
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 rsa_e = "010001"
@@ -79,17 +80,21 @@ def doReport(person):
         "X-Requested-With": "XMLHttpRequest"
     }
     sess.headers.update(newHeader)
-    if (int(time.strftime("%H")) + 8) % 24 < 12:
+
+    time_utc = datetime.utcnow()
+    time_peking = (time_utc + timedelta(hours=8))
+
+    if (int(time_peking.strftime("%H")) + 8) % 24 < 12:
         timeType = "上午"
     else:
         timeType = "下午"
-    date = time.strftime("%Y-%m-%d")
-    now = time.strftime("%Y-%m-%d %H:%M")
+    now = time_peking.strftime("%Y-%m-%d %H:%M")
 
     # 在这里你可以填写过去或者未来的日期(
-    # timeType = "下午"
-    # date = "2021-01-28 15:00"
+    # timeType = "上午"
+    # now = "2021-01-29 8:00"
 
+    log("Time Peking: " + now)
     requestJsonFirst = {
         "params": {
             "empcode": username
@@ -102,7 +107,7 @@ def doReport(person):
         },
         "querySqlId": "com.sudytech.work.shgcd.jkxxcj.jkxxcj.queryNear"
     }
-    resFrist = sess.post(
+    sess.post(
         "https://workflow.sues.edu.cn/default/work/shgcd/jkxxcj/com.sudytech.portalone.base.db.queryBySqlWithoutPagecond.biz.ext",
         json=requestJsonFirst)
     resSecond = sess.post(
