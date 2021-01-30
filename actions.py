@@ -79,7 +79,7 @@ def doReport(person):
         "X-Requested-With": "XMLHttpRequest"
     }
     sess.headers.update(newHeader)
-    if int(time.strftime("%H")) < 12:
+    if (int(time.strftime("%H")) + 8) % 24 < 12:
         timeType = "上午"
     else:
         timeType = "下午"
