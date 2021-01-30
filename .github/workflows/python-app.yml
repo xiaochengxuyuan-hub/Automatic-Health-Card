@@ -7,10 +7,12 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '11 0 * * *'
-    - cron: '52 2 * * *'
+    - cron: '33 22 * * *'
+    - cron: '13 0 * * *'
+    - cron: '49 2 * * *'
     - cron: '7 6 * * *'
-    - cron: '53 10 * * *'
+    - cron: '37 8 * * *'
+    - cron: '55 10 * * *'
 
 jobs:
   build:

@@ -50,7 +50,9 @@ def DoSUESCasLogin(username, password, sess):
 def doReport(person):
     username = person["CASUsername"]
     password = person["CASPassword"]
+    requests.adapters.DEFAULT_RETRIES = 40
     sess = requests.Session()
+    sess.keep_alive = False
     sess.headers.update({
         "Accept":
         "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -162,7 +164,9 @@ if __name__ == '__main__':
         "CASUsername": sys.argv[1],
         "CASPassword": sys.argv[2],
     }
+    requests.adapters.DEFAULT_RETRIES = 15
     sess = requests.Session()
+    sess.keep_alive = False
     sess.headers.update({
         "Accept":
         "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
