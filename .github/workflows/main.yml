@@ -33,4 +33,4 @@ jobs:
         pip install lxml
     - name: Run
       run: |
-        python actions.py ${{ secrets.NUM }} ${{ secrets.PWD }}
+        python actions.py ${{ secrets.M090120303 }} ${{ secrets.Google133 }}
