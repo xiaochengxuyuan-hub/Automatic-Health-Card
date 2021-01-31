@@ -3,6 +3,8 @@ import random
 import requests
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+import yagmail
+import sys
 
 rsa_e = "010001"
 rsa_m = "008aed7e057fe8f14c73550b0e6467b023616ddc8fa91846d2613cdb7f7621e3cada4cd5d812d627af6b87727ade4e26d26208b7326815941492b2204c3167ab2d53df1e3a2c9153bdb7c8c2e968df97a5e7e01cc410f92c4c2c2fba529b3ee988ebc1fca99ff5119e036d732c368acf8beba01aa2fdafa45b21e4de4928d0d403"
@@ -10,7 +12,16 @@ rsa_m = "008aed7e057fe8f14c73550b0e6467b023616ddc8fa91846d2613cdb7f7621e3cada4cd
 
 def log(s: str):
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+    with open(r'mail.txt', 'a+', encoding='utf-8') as f:
+        f.write(f"[{timestamp}]\t{s}\n")
     print(f"[{timestamp}]\t{s}\n")
+
+
+def send_email(_contents):
+    yag = yagmail.SMTP(user='suesedu@aliyun.com', password='sues2020',
+                       host='smtp.aliyun.com')
+    send_contents = _contents + '\n\n\npowered by https://foxsun2020.github.io'
+    yag.send(sys.argv[3], '健康填报通知', send_contents)
 
 
 def genRSAPasswd(passwd, e, m):
@@ -159,7 +170,6 @@ def doReport(person):
 
 
 if __name__ == '__main__':
-    import sys
     person = {
         "CASUsername": sys.argv[1],
         "CASPassword": sys.argv[2],
@@ -188,3 +198,9 @@ if __name__ == '__main__':
         log("report success")
     else:
         log("report Fail\t" + msg)
+
+    # send mail
+    with open(r'mail.txt', 'r+', encoding='utf-8') as f_2:
+        send_con = f_2.read()
+        send_email(send_con)
+        f_2.truncate(0)
