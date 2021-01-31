@@ -34,4 +34,4 @@ jobs:
         pip install yagmail
     - name: Run
       run: |
-        python actions.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.PWD }}
+        python actions.py ${{ secrets.NUM }} ${{ secrets.PWD }} ${{ secrets.MAIL }}
