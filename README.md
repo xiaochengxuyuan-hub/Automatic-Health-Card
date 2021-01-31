@@ -2,7 +2,7 @@
 
 ## Two ways
 
-**Remind: First, u need post u tmp least 1 time.**
+**CAUTION: First, u need post u tmp least 1 time.**
 
 ### Through Remote Environment: Github Actions
 
