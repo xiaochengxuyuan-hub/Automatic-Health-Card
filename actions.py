@@ -17,11 +17,11 @@ def log(s: str):
     print(f"[{timestamp}]\t{s}\n")
 
 
-def send_email(_contents):
+def send_email(title, _contents):
     yag = yagmail.SMTP(user='suesedu@aliyun.com', password='sues2020',
                        host='smtp.aliyun.com')
     send_contents = _contents + '\n\n\npowered by https://foxsun2020.github.io'
-    yag.send(sys.argv[3], '健康填报通知', send_contents)
+    yag.send(sys.argv[3], title, send_contents)
 
 
 def genRSAPasswd(passwd, e, m):
@@ -195,12 +195,14 @@ if __name__ == '__main__':
         quit()
     state, msg = doReport(person)
     if state:
-        log("report success")
+        log("Report Success")
+        title = "Report Success"
     else:
-        log("report Fail\t" + msg)
+        log("Report Fail\t" + msg)
+        title = "Report Fail"
 
     # send mail
     with open(r'mail.txt', 'r+', encoding='utf-8') as f_2:
         send_con = f_2.read()
-        send_email(send_con)
+        send_email(title, send_con)
         f_2.truncate(0)
