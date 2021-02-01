@@ -45,5 +45,3 @@ This tool exists thanks to all the people who contribute.
 [__@HynemanKan__](https://github.com/HynemanKan)
 
 [__@zsqw123__](https://github.com/zsqw123)
-
-
