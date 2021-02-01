@@ -1,25 +1,47 @@
-# HealthInfoAutoReport
+# Health Info Auto Report (SUES)
 
-## Two ways
+A script that helps you fill out the health report automatically at a set time.
 
-**CAUTION: First, u need post u tmp least 1 time.**
+## Usage
 
-### Through Remote Environment: Github Actions
+**CAUTION: Please fill out the report manually in [report website](my.sues.edu.cn) before using this tool.**
 
-1. star and fork this repo.
-2. set your own those 2 Actions secrets: NUM, PWD
-3. commit anything or wait actions auto run.
+We recommend you try the remote environment: Github Actions
 
-### Through Local Environment: Python 3.6+
+1. Fork this repo to your own repositories.
+2. Add repository secrets by click `Settings` >>> `Secrets`>>>`New repository secret
+` in your forked repo:
+   
+    | Name      | Val | example|
+    | ----------- | ----------- | ----------- |
+    | NUM   | your student ID    |011383246|
+    | PWD   | password           |*********|
+    | MAIL  | Notice mail address|011383246@sues.edu.cn|
 
-```powershell
-pip install requests
-pip install beautifulsoup4
-pip install lxml
-```
+    - Free free to add those values that only you can see them.
+    - [Click here to see how to add secerts](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
+    - Connect with your school email (@sues.edu.cn) on your Wechat
+      to get mail notifications.
+      
+      
+## Configuration
 
-Run this:
+change the following code in `.github/workflows` >>> `python-app.yml` to schedule action time
 
-```powershell
-python actions.py account pwd
-```
+      schedule:
+        - cron: '31 22 * * *'
+        - cron: '12 0 * * *'
+        - cron: '48 2 * * *'
+        - cron: '6 6 * * *'
+        - cron: '36 8 * * *'
+        - cron: '54 10 * * *'
+
+
+__Remark: '31 22 * * *' - - run daily at 22:31(UTC time)-- 6:31(UTC+8 Beijing, China Time)__
+
+## Contributor
+This tool exists thanks to all the people who contribute.
+
+[__@HynemanKan__](https://github.com/HynemanKan)
+
+[__@zsqw123__](https://github.com/zsqw123)
