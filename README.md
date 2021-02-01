@@ -9,7 +9,7 @@ A script that helps you fill out the health report automatically at a set time.
 We recommend you try the remote environment: Github Actions
 
 1. Fork this repo to your own repositories.
-2. Add repository secrets by click `Settings` >>> `Secrets`>>>`New repository secret
+2. Add repository secrets in the sheet by click `Settings` >>> `Secrets`(left sidebar)>>>`New repository secret
 ` in your forked repo:
    
     | Name      | Val | example|
@@ -26,7 +26,7 @@ We recommend you try the remote environment: Github Actions
       
 ## Configuration
 
-change the following code in `.github/workflows` >>> `python-app.yml` to schedule action time
+change the following codes in `.github/workflows` >>> `python-app.yml` to schedule action time
 
       schedule:
         - cron: '31 22 * * *'
